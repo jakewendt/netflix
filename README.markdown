@@ -1,8 +1,7 @@
 Netflix
 =======
 
-This is a basic plugin to demo usage of the Netflix API.  It includes a controller and views.  This isn't anything spectaculr.
-
+This is a basic plugin to demo usage of the Netflix API.  It includes a controller and views.  This isn't anything to spectacular.
 
 Requirements
 ============
@@ -15,7 +14,6 @@ These credentials need to be placed in a netflix.yml file in either RAILS_ROOT/c
     :consumer_token:   my_consumer_token
     :consumer_secret:  my_consumer_secret
 
-
 Example
 =======
 
@@ -27,11 +25,11 @@ Once you've acquired your Netflix API key ...
     # install config/netflix.yml
     script/server
 
-
 Testing
 =======
 
-rake
+No deep tests yet, but eventually ...
 
+    rake
 
 Copyright (c) 2009 [Jake Wendt], released under the MIT license
