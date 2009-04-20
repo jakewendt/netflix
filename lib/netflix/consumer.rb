@@ -9,9 +9,9 @@ class Netflix::Consumer < OAuth::Consumer
 						:http_method       => :post,
 						:signature_method  => "HMAC-SHA1",
 						:site              => "http://api.netflix.com",
-						:request_token_url => Netflix::OAUTH_ENDPOINTS[:request],
-						:access_token_url  => Netflix::OAUTH_ENDPOINTS[:access],
-						:authorize_url     => Netflix::OAUTH_ENDPOINTS[:authorize]
+						:request_token_url => Netflix::URL[:request],
+						:access_token_url  => Netflix::URL[:access],
+						:authorize_url     => Netflix::URL[:authorize]
 				}
 		)
 	end

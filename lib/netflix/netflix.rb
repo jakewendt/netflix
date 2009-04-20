@@ -1,6 +1,6 @@
 module Netflix
 
-	OAUTH_ENDPOINTS = {
+	URL = {
 		:request   => "http://api.netflix.com/oauth/request_token",
 		:authorize => "https://api-user.netflix.com/oauth/login",
 		:access    => "http://api.netflix.com/oauth/access_token"

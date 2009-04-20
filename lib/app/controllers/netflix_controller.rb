@@ -50,29 +50,26 @@ class NetflixController < ApplicationController
 
 	def logout
 		reset_session
-		redirect_to root_path
+		redirect_to :controller => 'netflix', :action => 'titles'
 	end
 
 protected
 
 	def set_consumer
-		@consumer = OAuth::Consumer.new(
-				Netflix.consumer_token,
-				Netflix.consumer_secret,
-				{
-						:scheme            => :query_string,
-						:http_method       => :post,
-						:signature_method  => "HMAC-SHA1",
-						:site              => "http://api.netflix.com",
-						:request_token_url => Netflix::OAUTH_ENDPOINTS[:request],
-						:access_token_url  => Netflix::OAUTH_ENDPOINTS[:access],
-						:authorize_url     => Netflix::OAUTH_ENDPOINTS[:authorize]
-#						:request_token_url => "http://api.netflix.com/oauth/request_token",
-#						:authorize_url     => "https://api-user.netflix.com/oauth/login",
-#						:access_token_url  => "http://api.netflix.com/oauth/access_token"
-				}
-
-		)
+		@consumer = Netflix::Consumer.new
+#		@consumer = OAuth::Consumer.new(
+#				Netflix.consumer_token,
+#				Netflix.consumer_secret,
+#				{
+#						:scheme            => :query_string,
+#						:http_method       => :post,
+#						:signature_method  => "HMAC-SHA1",
+#						:site              => "http://api.netflix.com",
+#						:request_token_url => Netflix::URL[:request],
+#						:access_token_url  => Netflix::URL[:access],
+#						:authorize_url     => Netflix::URL[:authorize]
+#				}
+#		)
 	end
 
 	def require_authorization
