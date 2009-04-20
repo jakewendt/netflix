@@ -1,0 +1,23 @@
+<form action="/netflix/people" >
+	<input type='text' name='term' value="<%=params[:term]-%>"/>
+	<input type='submit'/>
+</form>
+<ul>
+<% @people.each do |p| -%>
+	<li>
+		<%= link_to p['name'], p['link'].find{|l|l['title'] == 'web page'}['href'] -%>
+	</li>
+<% end -%>
+</ul>
+
+<!--
+=> {"results_per_page"=>["4"], "number_of_results"=>["4"], 
+"person"=>[{"name"=>["George Wendt"], "id"=>["http://api.netflix.com/catalog/people/98401"], "link"=>[{"href"=>"http://api.netflix.com/catalog/people/98401/filmography", "title"=>"filmography", "rel"=>"http://schemas.netflix.com/catalog/titles.filmography"}, {"href"=>"http://www.netflix.com/RoleDisplay/George_Wendt/98401", "title"=>"web page", "rel"=>"alternate"}]}
+], "start_index"=>["0"], "url_template"=>["http://api.netflix.com/catalog/people?{-join|&|term|start_index|max_results}"]}
+-->
+
+<pre style='display:none;'>
+<![CDATA[
+<%= @results.body %>
+]]>
+</pre>

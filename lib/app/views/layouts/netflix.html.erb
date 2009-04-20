@@ -1,0 +1,53 @@
+<html>
+<head>
+<link rel="shortcut icon" href="http://cdn-0.nflximg.com/us/icons/nficon.ico">
+<title>Netflix API Demo</title>
+<style>
+body {
+	margin: 0; 
+	padding: 0; 
+	height: 100%;
+	background-color: red; 
+}
+div#main {
+	min-height: 100%;
+}
+div#menu {
+	float: left;
+	width: 200px;
+	padding: 5px;
+}
+div#content {
+	background-color: white; 
+	margin-left: 210px; 
+	padding: 20px;
+	min-height: 100%;
+}
+div#menu a, div#menu img {
+	display: block;
+}
+div#menu a { 
+	margin: 5px;
+	padding: 5px;
+	border: 1px solid gray;
+	background-color: white;
+	text-decoration: none;
+}
+</style>
+</head>
+<body>
+<div id='main'>
+<div id='menu'>
+	<img src='http://cdn-0.nflximg.com/us/layout/headers/member_bg_rd.gif' />
+	<%= link_to "Search Titles", { :controller => 'netflix', :action => 'titles' } %>
+	<%= link_to "Search People", { :controller => 'netflix', :action => 'people' } %>
+	<%= link_to "Your Disc Queue", { :controller => 'netflix', :action => 'queue' } %>
+	<%= link_to "Your Instant Queue", { :controller => 'netflix', :action => 'instant' } %>
+	<%= link_to "At Home", { :controller => 'netflix', :action => 'home' } %>
+	<%= link_to "Recommendations", { :controller => 'netflix', :action => 'recommendations' } %>
+	<%= link_to "Disconnect", { :controller => 'netflix', :action => 'logout' } %>
+</div><!-- id='menu' -->
+<div id='content'><%= yield %></div>
+</div><!-- id='main' -->
+</body>
+</html>

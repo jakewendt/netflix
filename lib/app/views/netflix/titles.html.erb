@@ -1,0 +1,17 @@
+<form action="/netflix/titles" >
+	<input type='text' name='term' value="<%=params[:term]-%>"/>
+	<input type='submit'/>
+</form>
+<ul>
+<% @titles.each do |ct| -%>
+	<li>
+		<img src='<%=ct['box_art'][0]['small'] -%>' />
+		<%= link_to ct['title'][0]['regular'], ct['link'].find{|l|l['title'] == 'web page'}['href'] -%>
+	</li>
+<% end -%>
+</ul>
+<pre style='display:none;'>
+<![CDATA[
+<%= @results.body %>
+]]>
+</pre>

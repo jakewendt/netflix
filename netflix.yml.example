@@ -1,0 +1,3 @@
+:application_name: MyNetflixAppName
+:consumer_token:   MyNetflixConsumerToken
+:consumer_secret:  MyNetflixConsumerSecret
