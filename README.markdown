@@ -3,6 +3,8 @@ Netflix
 
 This is a basic plugin to demo usage of the Netflix API.  It includes a controller and views.  This isn't anything to spectacular.
 
+A working demo is currently [available](http://netflix.jakewendt.com).
+
 Requirements
 ============
 
