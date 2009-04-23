@@ -12,6 +12,7 @@ body {
 div#main {
 	min-height: 100%;
 }
+/*
 div#menu {
 	float: left;
 	width: 200px;
@@ -23,6 +24,7 @@ div#content {
 	padding: 20px;
 	min-height: 100%;
 }
+*/
 div#menu a, div#menu img {
 	display: block;
 }
@@ -32,6 +34,36 @@ div#menu a {
 	border: 1px solid gray;
 	background-color: white;
 	text-decoration: none;
+}
+
+div#menu {
+	display:block;
+	float:left;
+	height:100%;
+	margin:10px 5px 5px;
+	position:fixed;
+	width:200px;
+}
+div#content {
+	background-color:#FFFFFF;
+	border-left:5px double black;
+	border-right:5px double black;
+/*
+	left:200px;
+	margin:0 0 0 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 20px;
+*/
+	left:210px;
+	margin:0;
+	min-height:100%;
+	position:absolute;
+	right:5px;
+	padding: 20px;
+}
+td {
+	border-top: 1px solid gray;
 }
 </style>
 </head>

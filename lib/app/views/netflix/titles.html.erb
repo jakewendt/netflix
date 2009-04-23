@@ -2,14 +2,26 @@
 	<input type='text' name='term' value="<%=params[:term]-%>"/>
 	<input type='submit'/>
 </form>
-<ul>
+<table><tbody>
+<tr>
+	<th>Ave</th>
+	<th>Release</th>
+	<th>&nbsp;</th>
+	<th>&nbsp;</th>
+	<th>&nbsp;</th>
+	<th>&nbsp;</th>
+</tr>
 <% @titles.each do |ct| -%>
-	<li>
-		<img src='<%=ct['box_art'][0]['small'] -%>' />
-		<%= link_to ct['title'][0]['regular'], ct['link'].find{|l|l['title'] == 'web page'}['href'] -%>
-	</li>
+	<tr>
+		<td><%= ct['average_rating'].join(", ") -%></td>
+		<td><%= ct['release_year'].join(", ") -%></td>
+		<td><%= ct['category'].find_all{|c| c['scheme'] =~ /mpaa_ratings/}.map{|c| c['label'] }.join(", ") -%></td>
+		<td><%= ct['category'].find_all{|c| c['scheme'] =~ /genres/}.map{|c| c['label'] }.join(", ") -%></td>
+		<td><img src='<%=ct['box_art'][0]['small'] -%>' /></td>
+		<td><%= link_to ct['title'][0]['regular'], ct['link'].find{|l|l['title'] == 'web page'}['href'] -%></td>
+	</tr>
 <% end -%>
-</ul>
+</tbody></table>
 <pre style='display:none;'>
 <![CDATA[
 <%= @results.body %>
