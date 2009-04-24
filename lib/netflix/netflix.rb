@@ -62,7 +62,8 @@ module Netflix
 		params_copy.delete(:action)
 		params_copy.delete(:oauth_token)
 		params_copy.delete(:oauth_token_secret)
-		params_string = params_copy.keys.map { |key| "#{key}=#{params[key]}" }.join('&')
+		# an ampersand in the search term causes failure so parse it out
+		params_string = params_copy.keys.map { |key| "#{key}=#{params[key].gsub(/&/,'')}" }.join('&')
 		access_token.get("#{path}?#{URI.escape(params_string)}")
 	end
 
