@@ -2,3 +2,4 @@
 versions/
 test/debug.log
 test/netflix_plugin.sqlite3.db 
+rdoc/
