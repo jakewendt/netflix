@@ -1,14 +1,29 @@
-#	The original 3 lines
+require 'test/unit'
 require 'rubygems'
 require 'active_support'
 require 'active_support/test_case'
-# are actually needed.
+require 'action_controller'
+require 'action_controller/test_case'
+require 'oauth'
+require 'initializer'	#	rails/initializer
+require File.dirname(__FILE__) + '/../rails/init.rb' 
+
+$: << File.expand_path(File.dirname(__FILE__) + "/../lib/app/controllers/" )
+
+
+
+
+#	make all this go away
+#	the tests should be disconnected from any rails app
+
+
+
 
 
 ENV['RAILS_ENV'] = 'test' 
 ENV['RAILS_ROOT'] ||= File.dirname(__FILE__) + '/../../../..' 
-require 'test/unit' 
-require File.expand_path(File.join(ENV['RAILS_ROOT'], 'config/environment.rb')) 
+#require File.expand_path(
+#	File.join(ENV['RAILS_ROOT'], 'config/environment.rb')) 
 
 def load_schema 
 	config = YAML::load(IO.read(File.dirname(__FILE__) + '/database.yml'))  
